@@ -1,0 +1,14 @@
+services:
+  extractor:
+    build: .
+    ports:
+      - "${PORT:-8000}:${PORT:-8000}"
+    environment:
+      - PORT=${PORT:-8000}
+      - EXTRACTION_WORKERS=${EXTRACTION_WORKERS:-1}
+      - EXTRACTION_QUEUE_SIZE=${EXTRACTION_QUEUE_SIZE:-1}
+      - QUEUE_WAIT_TIMEOUT_SECONDS=${QUEUE_WAIT_TIMEOUT_SECONDS:-0}
+      - EXTRACTION_TIMEOUT_SECONDS=${EXTRACTION_TIMEOUT_SECONDS:-30}
+      - MAX_PDF_SIZE_MB=${MAX_PDF_SIZE_MB:-50}
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+    stop_grace_period: 35s
