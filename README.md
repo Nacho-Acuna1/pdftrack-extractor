@@ -28,7 +28,6 @@ Forma parte del ecosistema **PDFtrack** compuesto por cuatro repositorios desaco
 ---
 
 ## Endpoints
-
 ### 1. `POST /extract`
 Extrae el texto de un PDF y lo formatea a Markdown página por página.
 
