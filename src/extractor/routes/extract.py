@@ -27,6 +27,33 @@ class ExtractResponse(BaseModel):
 @router.post(
     "/extract",
     response_model=ExtractResponse,
+    openapi_extra={
+        "requestBody": {
+            "required": True,
+            "content": {
+                "multipart/form-data": {
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "file": {
+                                "type": "string",
+                                "format": "binary",
+                                "description": "Archivo PDF a extraer a Markdown",
+                            }
+                        },
+                        "required": ["file"],
+                    }
+                },
+                "application/pdf": {
+                    "schema": {
+                        "type": "string",
+                        "format": "binary",
+                        "description": "Payload binario directo del PDF",
+                    }
+                },
+            },
+        }
+    },
     responses={
         200: {
             "description": "Successful extraction",
