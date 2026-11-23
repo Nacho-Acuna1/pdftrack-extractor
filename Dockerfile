@@ -27,7 +27,7 @@ COPY src/ src/
 COPY src/extractor/entrypoint.py entrypoint.py
 
 ENV PATH="/app/.venv/bin:$PATH"
-ENV PYTHONPATH="/app/src:$PYTHONPATH"
+ENV PYTHONPATH=/app/src
 
 # Factor VII — port binding via environment variable
 ARG PORT_ARG=8000
