@@ -30,8 +30,7 @@ ENV PATH="/app/.venv/bin:$PATH"
 ENV PYTHONPATH=/app/src
 
 # Factor VII — port binding via environment variable
-ARG PORT_ARG=8000
-EXPOSE ${PORT_ARG}
+EXPOSE 8000
 
 STOPSIGNAL SIGTERM
 
