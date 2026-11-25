@@ -29,7 +29,6 @@ COPY src/extractor/entrypoint.py entrypoint.py
 ENV PATH="/app/.venv/bin:$PATH"
 ENV PYTHONPATH=/app/src
 
-# Factor VII — port binding via environment variable
 EXPOSE 8000
 
 STOPSIGNAL SIGTERM
